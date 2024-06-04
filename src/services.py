@@ -43,3 +43,20 @@ def save_trends() -> None:
 
     trends = _get_trends(woe_id=BRAZIL_WOE_ID, api=api)
     trends_collection.insert_many(trends)
+
+
+def display_trends(trends: List[Dict[str, Any]]) -> None:
+    """Display trends in a user-friendly manner.
+
+    Args:
+        trends (List[Dict[str, Any]]): List of trends to display.
+    """
+    for trend in trends:
+        name = trend.get("name")
+        tweet_volume = trend.get("tweet_volume")
+        print(f"Trend: {name}")
+        if tweet_volume:
+            print(f"Tweet Volume: {tweet_volume}")
+        else:
+            print("Tweet Volume: Not available")
+        print("-" * 40)

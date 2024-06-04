@@ -4,7 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 
 from src.responses import TrendItem
-from src.services import get_trends, save_trends
+from src.services import get_trends, save_trends, display_trends
 
 app = FastAPI()
 
@@ -19,5 +19,6 @@ if __name__ == "__main__":
 
     if not trends:
         save_trends()
+        display_trends(trends)
 
     uvicorn.run(app, host="0.0.0.0", port=8000)
