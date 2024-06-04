@@ -34,3 +34,8 @@ Use `Ctrl+C` para finalizar o processo servidor.
 poetry shell
 pytest
 ```
+
+## Desafio proposto
+
+- Containerizar a aplicação com Docker e modularizar a aplicação.
+- Criar relatórios/dashboards para exibir de forma mais amigável os dados coletados via Twitter API.
